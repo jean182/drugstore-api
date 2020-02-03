@@ -61,7 +61,7 @@ Drug.create(
   ]
 )
 
-10.times do
+40.times do
   random_drug = Drug.find(rand(Drug.first.id..Drug.last.id))
   Prescription.create(
     first_name: Faker::Name.first_name,

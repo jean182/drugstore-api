@@ -35,7 +35,7 @@ class PrescriptionsController < ApplicationController
 
   # DELETE /prescriptions/1
   def destroy
-    @prescription.destroy
+    render json: @prescription.destroy
   end
 
   private
@@ -46,6 +46,13 @@ class PrescriptionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def prescription_params
-      params.require(:prescription).permit(:first_name, :last_name, :dose, :prescription, :additional_notes)
+      params.require(:prescription).permit(
+        :first_name,
+        :last_name,
+        :dose,
+        :frequency,
+        :additional_notes,
+        :drug_id
+      )
     end
 end
