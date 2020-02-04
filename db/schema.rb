@@ -10,15 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_01_024356) do
+ActiveRecord::Schema.define(version: 2020_02_03_235017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "drugs", force: :cascade do |t|
-    t.string "generic_name"
+  create_table "conditions", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "drug_ranges", force: :cascade do |t|
     t.numrange "dose"
     t.int4range "frequency"
+    t.bigint "drug_id"
+    t.bigint "condition_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["condition_id"], name: "index_drug_ranges_on_condition_id"
+    t.index ["drug_id"], name: "index_drug_ranges_on_drug_id"
+  end
+
+  create_table "drugs", force: :cascade do |t|
+    t.string "generic_name"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -33,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_02_01_024356) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "drug_id", null: false
+    t.string "condition_name"
     t.index ["drug_id"], name: "index_prescriptions_on_drug_id"
   end
 

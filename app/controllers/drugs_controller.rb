@@ -46,9 +46,9 @@ class DrugsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def drug_params
-      drug_params = params.require(:drug).permit(:generic_name, :dose, :frequency, :description)
-      drug_params[:dose] = Range.new(params[:dose].first, params[:dose].last)
-      drug_params[:frequency] = Range.new(params[:frequency].first, params[:frequency].last)
-      drug_params
+      drug_params = params.require(:drug).permit(:generic_name, :description)
+      # drug_params[:dose] = Range.new(params[:dose].first, params[:dose].last)
+      # drug_params[:frequency] = Range.new(params[:frequency].first, params[:frequency].last)
+      # drug_params
     end
 end

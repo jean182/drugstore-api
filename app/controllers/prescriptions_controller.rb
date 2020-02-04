@@ -49,6 +49,7 @@ class PrescriptionsController < ApplicationController
       params.require(:prescription).permit(
         :first_name,
         :last_name,
+        :condition_name,
         :dose,
         :frequency,
         :additional_notes,
