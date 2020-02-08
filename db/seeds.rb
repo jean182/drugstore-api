@@ -35,42 +35,42 @@ Drug.create(
     {
       generic_name: 'Ofloxacin',
       description:
-        'Is used to treat bacterial infections of the skin, lungs, prostate, or urinary tract (bladder and kidneys).',
+        'Is used to treat bacterial infections of the skin, lungs, prostate, or urinary tract (bladder and kidneys).'
     },
     {
       generic_name: 'Ibuprofen',
       description:
-        'It works by reducing hormones that cause inflammation and pain in the body.',
+        'It works by reducing hormones that cause inflammation and pain in the body.'
     },
     {
       generic_name: 'Gabapentin',
       description:
-        'It works by reducing hormones that cause inflammation and pain in the body.',
+        'It works by reducing hormones that cause inflammation and pain in the body.'
     },
     {
       generic_name: 'Amoxicillin',
       description:
-        'Is used to treat a wide variety of bacterial infections. This medication is a penicillin-type antibiotic.',
+        'Is used to treat a wide variety of bacterial infections. This medication is a penicillin-type antibiotic.'
     },
     {
       generic_name: 'Allergy Relief',
       description:
-        'Can help relieve sneezing, itching, a runny nose and watery eyes.',
+        'Can help relieve sneezing, itching, a runny nose and watery eyes.'
     },
     {
       generic_name: 'Losartan Potassium',
       description:
-        'Medication that doctors prescribe to treat high blood pressure or hypertension.',
+        'Medication that doctors prescribe to treat high blood pressure or hypertension.'
     },
     {
       generic_name: 'Omeprazole',
       description:
-        'Liquid generally used to decrease infectious agents on the hands.',
+        'Liquid generally used to decrease infectious agents on the hands.'
     },
     {
       generic_name: 'Mesalazine',
       description:
-        'Liquid generally used to decrease infectious agents on the hands.',
+        'Liquid generally used to decrease infectious agents on the hands.'
     }
   ]
 )

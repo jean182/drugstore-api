@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class DrugsController < ApplicationController
-  before_action :set_drug, only: [:show, :update, :destroy]
+  before_action :set_drug, only: %i[show update destroy]
 
   # GET /drugs
   def index
@@ -39,16 +41,17 @@ class DrugsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_drug
-      @drug = Drug.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def drug_params
-      drug_params = params.require(:drug).permit(:generic_name, :description)
-      # drug_params[:dose] = Range.new(params[:dose].first, params[:dose].last)
-      # drug_params[:frequency] = Range.new(params[:frequency].first, params[:frequency].last)
-      # drug_params
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_drug
+    @drug = Drug.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def drug_params
+    drug_params = params.require(:drug).permit(:generic_name, :description)
+    drug_params[:dose] = Range.new(params[:dose].first, params[:dose].last)
+    drug_params[:frequency] = Range.new(params[:frequency].first, params[:frequency].last)
+    drug_params
+  end
 end

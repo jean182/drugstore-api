@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class DrugsControllerTest < ActionDispatch::IntegrationTest
@@ -5,12 +7,12 @@ class DrugsControllerTest < ActionDispatch::IntegrationTest
     @drug = drugs(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get drugs_url, as: :json
     assert_response :success
   end
 
-  test "should create drug" do
+  test 'should create drug' do
     assert_difference('Drug.count') do
       post drugs_url, params: { drug: { description: @drug.description, dose: @drug.dose, frequency: @drug.frequency, generic_name: @drug.generic_name } }, as: :json
     end
@@ -18,17 +20,17 @@ class DrugsControllerTest < ActionDispatch::IntegrationTest
     assert_response 201
   end
 
-  test "should show drug" do
+  test 'should show drug' do
     get drug_url(@drug), as: :json
     assert_response :success
   end
 
-  test "should update drug" do
+  test 'should update drug' do
     patch drug_url(@drug), params: { drug: { description: @drug.description, dose: @drug.dose, frequency: @drug.frequency, generic_name: @drug.generic_name } }, as: :json
     assert_response 200
   end
 
-  test "should destroy drug" do
+  test 'should destroy drug' do
     assert_difference('Drug.count', -1) do
       delete drug_url(@drug), as: :json
     end

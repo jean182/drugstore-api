@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RemoveDosesAndFrequency < ActiveRecord::Migration[6.0]
   def change
     remove_column :drugs, :dose

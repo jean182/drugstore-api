@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ConditionsController < ApplicationController
-  before_action :set_condition, only: [:show, :update, :destroy]
+  before_action :set_condition, only: %i[show update destroy]
 
   # GET /conditions
   def index
@@ -39,13 +41,14 @@ class ConditionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_condition
-      @condition = Condition.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def condition_params
-      params.require(:condition).permit(:name, :dose, :frequency, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_condition
+    @condition = Condition.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def condition_params
+    params.require(:condition).permit(:name, :dose, :frequency, :description)
+  end
 end
